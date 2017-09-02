@@ -5,4 +5,4 @@ set -x
 
 /bin/mkdir -p /mnt/plexdrive
 
-/usr/bin/plexdrive mount /mnt/plexdrive --uid=$MOUNT_UID --gid=$MOUNT_GID -o allow_other -o allow_non_empty_mount
+/usr/bin/plexdrive mount /mnt/plexdrive -o allow_other -o allow_non_empty_mount
