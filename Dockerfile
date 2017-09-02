@@ -22,9 +22,9 @@ RUN apk add --no-cache \
     && wget -q https://downloads.rclone.org/rclone-current-linux-${PLATFORM_ARCH}.zip \
     && unzip rclone-current-linux-${PLATFORM_ARCH}.zip \
     && mv rclone-*-linux-${PLATFORM_ARCH}/rclone /usr/bin/ \
-    && rm -r rclone-*
+    && rm -r rclone-* \
     && wget -q https://github.com/dweidenfeld/plexdrive/releases/download/${PLEXDRIVE_VERSION}/plexdrive-linux-${PLATFORM_ARCH} \
-    && mv /tmp/plexdrive-linux-${PLATFORM_ARCH} /usr/bin/plexdrive \
+    && mv /tmp/plexdrive-linux-${PLATFORM_ARCH} /usr/bin/plexdrive
 
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
