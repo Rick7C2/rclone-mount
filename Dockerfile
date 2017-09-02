@@ -28,7 +28,7 @@ RUN apk add --no-cache \
     && chown root:root /usr/bin/rclone \
     && sudo chmod 755 /usr/bin/rclone \
     && chown root:root /usr/bin/plexdrive \
-    && sudo chmod 755 /usr/bin/plexdrive
+    && chmod 755 /usr/bin/plexdrive
 
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
