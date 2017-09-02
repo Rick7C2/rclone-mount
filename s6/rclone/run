@@ -5,4 +5,4 @@ set -x
 
 /bin/mkdir -p /mnt/rclone
 
-sudo /usr/bin/rclone mount --allow-other --allow-non-empty $RCLONE_REMOTE: /mnt/rclone
+/usr/bin/rclone mount --allow-other --allow-non-empty --uid=$MOUNT_UID --gid=$MOUNT_GID $RCLONE_REMOTE: /mnt/rclone
