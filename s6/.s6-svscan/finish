@@ -3,3 +3,5 @@
 /bin/umount -f /mnt/unionfs
 
 /bin/umount -f /mnt/rclone
+
+/bin/umount -f /mnt/plexdrive
