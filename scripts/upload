@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export LOCAL_DIR="/tmp/local/"
+export LOCAL_DIR="/mnt/local/"
 
 function upload {
     set -e
