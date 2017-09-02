@@ -34,6 +34,6 @@ ENV MOUNT_UID="1000" \
     RCLONE_REMOTE="" \
     SCHEDULE="0 9 * * *"
 
-VOLUME ["/mnt/unionfs", "/mnt/local"]
+VOLUME ["/mnt/unionfs", "/tmp/local"]
 
 CMD ["/bin/s6-svscan", "/etc/s6"]
