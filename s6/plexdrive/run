@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -e
+set -x
+
+/bin/mkdir -p /mnt/plexdrive
+
+/usr/bin/plexdrive mount /mnt/plexdrive -o allow_other -o allow_non_empty_mount
