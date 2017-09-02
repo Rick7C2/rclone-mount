@@ -32,7 +32,7 @@ RUN apk add --no-cache \
 
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
-    chmod -R 755 /usr/local/bin
+RUN chmod -R 755 /usr/local/bin
 
 ENV MOUNT_UID="1000" \
     MOUNT_GID="1000" \
