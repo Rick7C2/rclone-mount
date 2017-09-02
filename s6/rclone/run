@@ -5,4 +5,4 @@ set -x
 
 /bin/mkdir -p /mnt/rclone
 
-/usr/bin/rclone mount --read-only --allow-other $RCLONE_REMOTE: /mnt/rclone
+/usr/bin/rclone mount --allow-other $RCLONE_REMOTE: /mnt/rclone
