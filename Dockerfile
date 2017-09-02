@@ -36,4 +36,4 @@ ENV MOUNT_UID="1000" \
 
 VOLUME ["/mnt/unionfs", "/tmp/local"]
 
-CMD ["/bin/s6-svscan", "/etc/s6"]
+CMD ["/bin/.s6-svscan", "/etc/s6"]
