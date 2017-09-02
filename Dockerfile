@@ -26,7 +26,7 @@ RUN apk add --no-cache \
     && wget -q https://github.com/dweidenfeld/plexdrive/releases/download/${PLEXDRIVE_VERSION}/plexdrive-linux-${PLATFORM_ARCH} \
     && mv /tmp/plexdrive-linux-${PLATFORM_ARCH} /usr/bin/plexdrive \
     && chown root:root /usr/bin/rclone \
-    && sudo chmod 755 /usr/bin/rclone \
+    && chmod 755 /usr/bin/rclone \
     && chown root:root /usr/bin/plexdrive \
     && chmod 755 /usr/bin/plexdrive
 
