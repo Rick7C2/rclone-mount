@@ -3,9 +3,9 @@
 set -e
 set -x
 
-/bin/s6-svwait -u /etc/s6/rclone
+/bin/s6-svwait -u /etc/s6/plexdrive
 
-/bin/mkdir -p /tmp/local
+/bin/mkdir -p /mnt/local
 /bin/mkdir -p /mnt/unionfs
 
-/usr/bin/unionfs -f -o cow -o allow_other -o uid=$MOUNT_UID -o gid=$MOUNT_GID /tmp/local=RW:/mnt/rclone=RO /mnt/unionfs
+/usr/bin/unionfs -f -o cow -o allow_other -o uid=$MOUNT_UID -o gid=$MOUNT_GID /mnt/local=RW:/mnt/plexdrive=RO /mnt/unionfs
