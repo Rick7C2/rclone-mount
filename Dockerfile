@@ -25,22 +25,21 @@ RUN apk add --no-cache \
     && rm -r rclone-* \
     && wget -q https://github.com/dweidenfeld/plexdrive/releases/download/${PLEXDRIVE_VERSION}/plexdrive-linux-${PLATFORM_ARCH} \
     && mv /tmp/plexdrive-linux-${PLATFORM_ARCH} /usr/bin/plexdrive \
-    && chown root:root /usr/bin/rclone \
     && chmod 755 /usr/bin/rclone \
-    && chown root:root /usr/bin/plexdrive \
     && chmod 755 /usr/bin/plexdrive
 
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
-RUN chmod -R 755 /usr/local/bin \
-    && chmod -R 755 /etc/s6/plexdrive/finish \
+RUN chmod -R 755 /etc/s6/plexdrive/finish \
     && chmod -R 755 /etc/s6/plexdrive/run \
     && chmod -R 755 /etc/s6/rclone/finish \
     && chmod -R 755 /etc/s6/rclone/run \
     && chmod -R 755 /etc/s6/unionfs/finish \
     && chmod -R 755 /etc/s6/unionfs/run \
     && chmod -R 755 /etc/s6/cron/run \
-    && chmod -R 755 /etc/s6/.s6-svscan/finish
+    && chmod -R 755 /etc/s6/.s6-svscan/finish \
+    && chmod -R 755 /usr/local/bin/purge-deleted \
+    && chmod -R 755 /usr/local/bin/upload
 
 ENV MOUNT_UID="1000" \
     MOUNT_GID="1000" \
