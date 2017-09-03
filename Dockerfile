@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:latest
 
 # global environment settings
 ENV PLEXDRIVE_VERSION="5.0.0"
