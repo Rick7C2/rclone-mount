@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM lsiobase/xenial
 
 # global environment settings
 ENV PLEXDRIVE_VERSION="5.0.0"
@@ -11,12 +11,12 @@ LABEL org.label-schema.schema-version="1.0" \
       org.label-schema.docker.cmd="docker run -d --name rclone-mount --cap-add SYS_ADMIN --device /dev/fuse -e RCLONE_REMOTE="" -v /local/path/to/rclone.conf:/root/.rclone.conf jdavis92/rclone-mount" \
       org.label-schema.docker.param="RCLONE_REMOTE=Name of rclone remote to mount, SCHEDULE=CRON schedule for persisting changes, MOUNT_UID=UID for mounted files, MOUNT_GID=GID for mounted files"
 
-RUN apk add --no-cache \
-    bash \
+RUN apt-get update && \
+    apt-get install -y \
     ca-certificates \
     fuse \
-    s6 \
     unionfs-fuse \
+    s6 \
     wget \
     && cd /tmp \
     && wget -q https://downloads.rclone.org/rclone-current-linux-${PLATFORM_ARCH}.zip \
