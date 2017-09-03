@@ -17,6 +17,7 @@ RUN apt-get update && \
     fuse \
     unionfs-fuse \
     wget \
+    unzip \
     && cd /tmp \
     && wget -q https://downloads.rclone.org/rclone-current-linux-${PLATFORM_ARCH}.zip \
     && unzip rclone-current-linux-${PLATFORM_ARCH}.zip \
