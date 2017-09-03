@@ -33,13 +33,13 @@ RUN apk add --no-cache \
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
 RUN chmod -R 755 /usr/local/bin \
-    && chmod -R 755 /etc/s6/plexdrive/finish
-    && chmod -R 755 /etc/s6/plexdrive/run
-    && chmod -R 755 /etc/s6/rclone/finish
-    && chmod -R 755 /etc/s6/rclone/run
-    && chmod -R 755 /etc/s6/unionfs/finish
-    && chmod -R 755 /etc/s6/unionfs/run
-    && chmod -R 755 /etc/s6/cron/run
+    && chmod -R 755 /etc/s6/plexdrive/finish \
+    && chmod -R 755 /etc/s6/plexdrive/run \
+    && chmod -R 755 /etc/s6/rclone/finish \
+    && chmod -R 755 /etc/s6/rclone/run \
+    && chmod -R 755 /etc/s6/unionfs/finish \
+    && chmod -R 755 /etc/s6/unionfs/run \
+    && chmod -R 755 /etc/s6/cron/run \
     && chmod -R 755 /etc/s6/.s6-svscan/finish
 
 ENV MOUNT_UID="1000" \
