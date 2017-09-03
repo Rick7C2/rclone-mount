@@ -16,7 +16,6 @@ RUN apt-get update && \
     ca-certificates \
     fuse \
     unionfs-fuse \
-    s6 \
     wget \
     && cd /tmp \
     && wget -q https://downloads.rclone.org/rclone-current-linux-${PLATFORM_ARCH}.zip \
