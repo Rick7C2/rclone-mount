@@ -6,3 +6,7 @@ set -x
 /bin/mkdir -p /mnt/rclone
 
 /usr/bin/rclone mount --allow-other --allow-non-empty --uid=$MOUNT_UID --gid=$MOUNT_GID $RCLONE_REMOTE /mnt/rclone
+
+/bin/mkdir -p /mnt/rcache
+
+/usr/bin/rclone mount --allow-other --allow-non-empty --uid=$MOUNT_UID --gid=$MOUNT_GID $RCLONE_CACHE /mnt/rcache
