@@ -8,4 +8,4 @@ set -x
 /bin/mkdir -p /tmp/local
 /bin/mkdir -p /mnt/unionfs
 
-/usr/bin/unionfs-fuse -f -o cow -o allow_other -o uid=$MOUNT_UID -o gid=$MOUNT_GID /tmp/local=RW:/mnt/plexdrive=RO /mnt/unionfs
+/usr/bin/unionfs-fuse -f -o cow -o allow_other -o uid=$MOUNT_UID -o gid=$MOUNT_GID /tmp/local=RW:/mnt/rcache=RO /mnt/unionfs
