@@ -22,16 +22,11 @@ RUN apt-get update && \
     && wget -q https://downloads.rclone.org/rclone-current-linux-${PLATFORM_ARCH}.zip \
     && unzip rclone-current-linux-${PLATFORM_ARCH}.zip \
     && mv rclone-*-linux-${PLATFORM_ARCH}/rclone /usr/bin/ \
-    && rm -r rclone-* \
-    && wget -q https://github.com/dweidenfeld/plexdrive/releases/download/${PLEXDRIVE_VERSION}/plexdrive-linux-${PLATFORM_ARCH} \
-    && mv /tmp/plexdrive-linux-${PLATFORM_ARCH} /usr/bin/plexdrive \
-    && chmod a+x /usr/bin/plexdrive
+    && rm -r rclone-*
 
 ADD ./scripts /usr/local/bin
 ADD ./s6 /etc/s6
-RUN chmod +x /etc/s6/plexdrive/finish \
-    && chmod +x /etc/s6/plexdrive/run \
-    && chmod +x /etc/s6/rclone/finish \
+RUN chmod +x /etc/s6/rclone/finish \
     && chmod +x /etc/s6/rclone/run \
     && chmod +x /etc/s6/unionfs/finish \
     && chmod +x /etc/s6/unionfs/run \
@@ -45,6 +40,6 @@ ENV MOUNT_UID="1000" \
     RCLONE_REMOTE="" \
     SCHEDULE="0 9 * * *"
 
-VOLUME ["/mnt/unionfs", "/tmp/local", "/mnt/rclone", "/mnt/plexdrive"]
+VOLUME ["/mnt/unionfs", "/tmp/local", "/mnt/rclone", "/mnt/rcache"]
 
 CMD ["/bin/s6-svscan", "/etc/s6"]
