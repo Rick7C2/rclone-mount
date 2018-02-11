@@ -8,7 +8,7 @@ function upload {
     REMOTE_PATH="${LOCAL_PATH#$LOCAL_DIR}"
     REMOTE_DIR=`dirname "$REMOTE_PATH"`
     set -x
-    time rclone move -vv "$LOCAL_PATH" "$RCLONE_REMOTE:$REMOTE_DIR"
+    time rclone move -vv "$LOCAL_PATH" "${RCLONE_REMOTE}${REMOTE_DIR}"
 }
 export -f upload
 
