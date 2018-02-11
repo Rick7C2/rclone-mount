@@ -4,4 +4,4 @@
 
 /bin/umount -f /mnt/rclone
 
-/bin/umount -f /mnt/plexdrive
+/bin/umount -f /mnt/rcache
