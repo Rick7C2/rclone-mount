@@ -3,7 +3,7 @@
 set -e
 set -x
 
-/bin/s6-svwait -u /etc/s6/plexdrive
+/bin/s6-svwait -u /etc/s6/rclone
 
 /bin/mkdir -p /tmp/local
 /bin/mkdir -p /mnt/unionfs
